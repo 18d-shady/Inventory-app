@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ben-Johnson Inventory</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="../static/css/style1.css">
+
+	<!--<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">-->
+	
+	
+</head>
+<body class="bg-slate-100 font-mono">
+	<nav class="bg-emerald-700 h-10 w-full fixed top-0 left-0">
+		<h1 class="text-white ms-3 align-middle inline-block font-bold mt-1">
+			<span class="w-8 h-8 p-1 rounded-full border border-blue-900 text-xl text-blue-600 font-serif font-italic bg-white">B</span>
+			Ben Johnson LTD
+		</h1>
+
+		<div class="float-right inline-block align-middle my-2">
+			<p id="date-time" class="text-sm me-10 align-middle text-white font-bold"></p>
+			
+		</div>
+	</nav>
+	<div class="mt-16 flex flex-row">
+		<div class="mx-5 w-3/5">
+			<h3 class="text-2xl text-center text-emerald-700 bg-white mb-3">Products</h3>
+
+			<div class="grid grid-cols-5 gap-5">
+				{% for row in rows %}
+				<div class="bg-white text-sm p-1 clickable-div">
+					<img src="{{ url_for('static', filename='images/' + row[2]) }}" class="w-20 h-20 mx-auto object-cover">
+					<h3 id="{{ row[6] }}" class="hidden">{{ row[0] }}</h3>
+					<h4 class="text-center text-black">{{ row[1] }}</h4>
+					<p class="text-emerald-700 text-center">N{{ row[6] }}</p>
+					<p class="text-center">In stock: {{ row[5] }}</p>
+				</div>
+				{% endfor %}
+
+				
+			</div>
+			
+		</div>
+		<div class="w-96"></div>
+		
+	</div>
+
+	<div class="bg-white fixed top-16 right-0 w-96 h-screen p-2 overflow-y-auto">
+		<input type="text" name="search"
+		placeholder="Type to search.." class="w-full h-7 p-1 text-sm border border-slate-300 ">
+
+		<div class=" text-xs mt-2">
+			<p class="text-base my-1 font-bold">Products bought</p>
+			<div id="resultDiv" class="text-xs text-slate-700 min-h-20">
+					
+			</div>
+			<p id="totalItems" class="text-right w-full">Total Items: 0</p>
+			<p id="totalAmount" class="bg-emerald-700 text-white text-right w-full my-1 text-sm p-1">Total Amount: N0</p>
+
+			<div class="flex flex-row text-sm mb-20">
+				<button class="basis-1/2 bg-red-100 my-3 py-2 text-red-800 mx-1" onclick="location.reload();">Cancel</button>
+				<button class="basis-1/2 bg-emerald-700 text-white my-3 py-2 mx-1" onclick="sendData()">Complete Transaction</button>
+			</div>
+			<br>
+		</div>
+			
+	</div>
+	
+		
+	
+	<script src="{{ url_for('static', filename='js/pos.js') }}" type="text/javascript"></script>	
+</body>
+</html>

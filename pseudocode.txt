@@ -1,0 +1,14 @@
+so that means we will create an interface for the admin and the sellers
+the sellers would be able to see if what goods are remaining and will be able to sell them and then check out
+whereas the admin would be able to add more goods and check what inventory items are remaining.
+so the sellers own would be like a checkout system.
+
+########
+In a retail business, the staff or sales associates would typically be responsible for deducting the sold items from the inventory through the point of sale (POS) system or by manually updating the inventory app. This ensures that the inventory levels are accurate and up-to-date in real-time.
+
+On the other hand, the manager or inventory administrator would be responsible for:
+
+Restocking: Replenishing inventory levels by ordering new stock from suppliers or distributors.
+Inventory management: Monitoring inventory levels, identifying slow-moving or dead stock, and making decisions about inventory optimization, such as adjusting stock levels, pricing, or promotions.
+Inventory reporting: Generating reports to analyze sales trends, inventory levels, and stock turnover to inform business decisions.
+Inventory control: Implementing inventory control measures, such as cycle counting, physical inventory counts, and inventory audits to ensure accuracy and prevent stockouts or overstocking.

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ben-Johnson Inventory</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	<link rel="stylesheet" href="../static/css/style1.css">
+
+	<!--<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">-->
+	
+	
+</head>
+<body class="bg-slate-100 font-mono">
+	<nav class="h-10 w-full bg-blue-900 fixed top-0 left-0">
+		<svg class="h-6 w-6 text-white absolute top-2 right-12 "  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+		  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+		</svg>
+		<svg class="h-6 w-6 text-white absolute top-2 right-3"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />  <circle cx="12" cy="12" r="3" /></svg>
+		<h1 class="text-white absolute top-1 left-3">
+			<span class="w-8 h-8 p-1 rounded-full border border-blue-900 text-xl text-blue-600 font-serif font-italic bg-white">B</span>
+			Ben Johnson LTD
+		</h1>
+	</nav>
+
+	<div class="fixed top-10 left-0 bg-white h-screen w-48 p-3 rounded-sm">
+		<img src="../static/images/Clint.jpeg" 
+			alt="bla bla" class="object-cover rounded-full w-20 h-20 block mx-auto mt-5">
+		<p class="text-black font-bold text-center mt-2">Ojah Clinton Orifa</p>
+
+		<input type="text" name="search"
+		placeholder="Type to search.." class="w-full h-7 p-1 text-sm mt-5 border border-slate-500 rounded-md">
+
+		<a href="/dashboard" class="block mt-5 py-2 active:bg-slate-200">
+			<svg class="h-5 w-5 text-blue-800 inline-block align-middle"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="3" y="3" width="7" height="7" />  <rect x="14" y="3" width="7" height="7" />  <rect x="14" y="14" width="7" height="7" />  <rect x="3" y="14" width="7" height="7" /></svg>
+			<p class="align-middle inline-block">Dashboard</p>
+		</a>
+
+		<a href="/products" class="block py-2 active:bg-slate-200">
+			<svg class="h-5 w-5 text-blue-800 inline-block align-middle"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />  <line x1="3" y1="6" x2="21" y2="6" />  <path d="M16 10a4 4 0 0 1-8 0" /></svg>
+			<p class="align-middle inline-block">Products</p>
+		</a>
+
+		<a href="/sales" class="block py-2 active:bg-slate-200 bg-slate-200">
+			<svg class="h-5 w-5 text-blue-800 inline-block align-middle"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="3" y1="4" x2="21" y2="4" />  <path d="M4 4v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-10" />  <line x1="12" y1="16" x2="12" y2="20" />  <line x1="9" y1="20" x2="15" y2="20" />  <path d="M8 12l3 -3l2 2l3 -3" /></svg>
+			<p class="align-middle inline-block"> Sales</p>
+		</a>
+
+		<a href="/purchases" class="block py-2 active:bg-slate-200">
+			<svg class="h-5 w-5 text-blue-800 inline-block align-middle"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+			</svg>
+			<p class="align-middle inline-block">Purchases</p>
+		</a>
+
+
+		<button class="w-full bg-blue-900 text-white py-1 my-10">Logout</button>
+	</div>
+
+
+	<div class="flex flex-row mt-11">
+		<div class="h-screen w-56 p-3 rounded-sm">
+		</div>
+
+		<div class="p-5 w-full">
+			<div class="rounded-md bg-white shadow-md p-2">
+				<h4 class="inline-block align-middle">Sales</h4>
+				<div class="float-right text-sm align-middle">
+					<button id="printButton" class="bg-emerald-600 text-white px-3 py-1 rounded-md">Print</button>
+					<a href="/pos" class="bg-purple-900 text-white px-3 py-2 rounded-md">View POS</a>
+
+				</div>
+				<table id="sales-table" class="border-t border-slate-300 w-full mt-5">
+					<thead>
+						<tr class="text-sm text-left bg-blue-900 text-white">
+							<th class="p-1">S/N</th>
+							<th class="py-1">Date</th>
+							<th class="py-1">Items</th>
+							<th class="py-1">Grand Total</th>
+							<th class="py-1">Reference</th>
+							<th class="py-1">Action</th>
+						</tr>
+					</thead>
+					<tbody id="table-body" class="text-sm">
+						{% for row in rows %}
+						<tr id="row-{{ row[0] }}" class="text-sm border-b border-slate-200">
+							<td class="py-1">{{ row[0] }}</td>
+							<td class="py-1">{{ row[1] }}</td>
+							<td class="py-1">{{ row[2] }}</td>
+							<td class="py-1">N{{ row[3] }}</td>
+							<td class="py-1">{{ row[4] }}</td>
+							<td class="py-1">
+								<button class="bg-blue-900 text-white px-2 py-1 rounded-md" id="view-items-{{ row[0] }}">
+									<svg class="h-5 w-5 inline-block"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									  
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+									</svg>
+									View Items
+								</button>
+							</td>
+							<div class="absolute m-auto left-64 rounded-md hidden bg-white w-1/2 min-h-40 border border-slate-200 shadow-lg p-2 text-sm" id="additional-items-{{ row[0] }}">
+								<ul id="sales-items-{{ row[0] }}"></ul>
+							</div>
+						</tr>
+						{% endfor %}
+					</tbody>
+					
+				</table>
+			</div>
+			
+		</div>
+
+		
+	</div>
+	<script src="{{ url_for('static', filename='js/sales.js') }}" type="text/javascript"></script>
+</body>
+</html>
