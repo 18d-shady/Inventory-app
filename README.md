@@ -1,4 +1,4 @@
-This creates an inventory app that can be used to keep track of your inventory items, purchase and sales, and also generate report based on finds ![image](https://github.com/user-attachments/assets/05f2ab8b-0f9f-4ca5-8e58-6f97ecb5ecbf)
+This creates an inventory application using flask as backend, sqlite database, HTML, CSS and JavaScript for frontend. The application can be used to keep track of your inventory items, purchase and sales, and also generate report based on finds ![image](https://github.com/user-attachments/assets/05f2ab8b-0f9f-4ca5-8e58-6f97ecb5ecbf)
 
 Attached above is the dashboard items and below is the product page ![image](https://github.com/user-attachments/assets/422b1edb-f3dc-4174-974e-58b270eb8328)
 
